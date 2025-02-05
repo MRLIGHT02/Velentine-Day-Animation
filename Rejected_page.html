@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rejection Blues</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            color: #ecf0f1;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        body {
+            background-color: #ac9393;
+            -webkit-animation: random 15s infinite;
+            animation: random 15s infinite;
+        }
+        @keyframes random {
+            15% { background-color: rgba(139, 80, 80, 0.479); } 
+            70% { background-color: rgb(63, 63, 40); } 
+            45% { background-color: rgba(0, 128, 0, 0.466); } 
+            60% { background-color: rgb(34, 109, 99); }
+            30% { background-color: rgb(48, 18, 18); }  
+        }
+        .container {
+         display: flex;
+            text-align: center;
+           flex-direction: column;
+            background-size: contain;
+            background-repeat: no-repeat;
+            padding: 20px;
+            width: 450px;
+            height: 400px; /* Adjusted height */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            margin-top: -10px;
+        }
+        p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+        .container button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            align-items: baseline;
+            
+            justify-content: end;
+     
+
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .container .background-image{
+            margin-bottom: -10px;
+            margin-top: -10px;
+        }
+        /* @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .container button {
+                font-size: 0.9em;
+            }
+        } */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.75em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .container button {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.8em;
+            }
+            .container button {
+                font-size: 0.8em;
+                padding: 8px 12px;
+            }
+            .container {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container" >
+        <h1><b>Rejected Ok!</b></h1>
+        <div class="background-image">
+        <img src="./thumbs-up.png" width="200px
+        " height="200px" alt="">
+    </div>
+        <p>Maybe You Have Better Option Then me.</p>
+        <p>Just Chill and I'm Not Sad.</p>
+        <p>Be Happy</p>
+        <button onclick="window.location.href='https://youtu.be/oe1Onad_fcg?si=399Dur7RmhHaYy4a'">Listen to some music</button>
+    </div>
+</body>
+</html>

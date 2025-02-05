@@ -1,0 +1,123 @@
+body {
+    background-image: -webkit-linear-gradient(65deg, #c72c41 70%, #212121 30%);
+    background-color: #c7004c;
+    color: #ee4266;
+    font-family: 'Lobster', cursive;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure the background covers the full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.calculator {
+    padding: 50px 50px 20px 50px;
+    text-align: center;
+    background-color: #211717;
+    width: 50%;
+    box-sizing: border-box;
+    max-width: 600px; /* Limit the maximum width of the calculator */
+}
+
+.name-box {
+    padding: 12px 14px;
+    width: 40%;
+    box-sizing: border-box;
+}
+
+/* buttons */
+.buttons {
+    color: #ffd7e8;
+    background-color: #ffaaaa;
+    border: solid;
+    border-color: #ee4266;
+    cursor: pointer;
+    margin: 10px;
+    padding: 10px 20px;
+    position: relative;
+    opacity: 0.5;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.buttons:hover {
+    box-shadow: 5px 3px #bd245f;
+    opacity: 1;
+    color: #ee4266;
+}
+
+/* Social Media */
+.social-media {
+    opacity: 0.5;
+    cursor: pointer;
+    padding: 10px 3px 0 4px;
+}
+
+.social-media:hover {
+    opacity: 1;
+}
+
+a {
+    color: #ee4266;
+}
+
+/* copy right */
+p {
+    opacity: 1;
+    font-size: 1rem;
+}
+
+#notice {
+    opacity: 0.5;
+    font-size: 0.8rem;
+}
+
+/* Media Query for tablets and small desktops */
+@media (max-width: 1024px) {
+    .calculator {
+        width: 70%;
+        padding: 30px 20px;
+    }
+
+    .name-box {
+        width: 60%;
+    }
+
+    .buttons {
+        width: 45%;
+    }
+}
+
+/* Media Query for tablets */
+@media (max-width: 768px) {
+    .calculator {
+        width: 80%;
+        padding: 20px 10px;
+    }
+
+    .name-box {
+        width: 80%;
+    }
+
+    .buttons {
+        width: 60%;
+    }
+}
+
+/* Media Query for mobile devices */
+@media (max-width: 600px) {
+    .calculator {
+        width: 90%;
+        padding: 10px;
+    }
+
+    .name-box {
+        width: 100%;
+    }
+
+    .buttons {
+        width: 100%;
+        border-radius: 5px;
+    }
+}

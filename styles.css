@@ -40,7 +40,12 @@ body {
     font-size: 1rem;
     box-sizing: border-box;
 }
-
+.button-class{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .buttons:hover {
     box-shadow: 5px 3px #bd245f;
     opacity: 1;
@@ -103,6 +108,7 @@ p {
     .buttons {
         width: 60%;
     }
+   
 }
 
 /* Media Query for mobile devices */

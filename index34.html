@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Data Collection</title>
+</head>
+<body>
+    <h1>User Data Collection</h1>
+    <form id="userDataForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" required><br><br>
+        
+        <label for="userid">User  ID:</label>
+        <input type="text" id="userid" required><br><br>
+        
+        <label for="phone_num">Phone Number:</label>
+        <input type="text" id="phone_num"><br><br>
+        
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        document.getElementById('userDataForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Collect user data
+            const name = document.getElementById('name').value;
+            const userid = document.getElementById('userid').value;
+            const phone_num = document.getElementById('phone_num').value || 'null'; // Store 'null' if empty
+
+            // Create CSV content
+            const csvContent = `"name","userid","phone_num"\n"${name}","${userid}","${phone_num}"\n`;
+
+            // Create a blob and generate a URL for it
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+            const url = URL.createObjectURL(blob);
+
+            // Create a link element to download the CSV
+            const link = document.createElement('a');
+            link.setAttribute('href', url);
+            link.setAttribute('download', 'user_data.csv');
+            document.body.appendChild(link);
+            link.click(); // Simulate click to download
+            document.body.removeChild(link); // Clean up
+
+            // Reset the form
+            document.getElementById('userDataForm').reset();
+        });
+    </script>
+</body>
+</html>

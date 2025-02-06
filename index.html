@@ -1,62 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <style>
-        .heart {
-            animation: beat 1.5s infinite;
-        }
-        @keyframes beat {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.1); }
-        }
-        button{
-            margin: 0 10px;
-        }
-        .Recjected{
-            transition: 1.70s;
-        }
-        .Recjected:hover{
-            background-color:black ;
-        }
-        .Recjected:hover .heart{
-            display: none;
-        }
-    </style>
-</head>
-<body class="bg-pink-100 flex flex-col items-center justify-center min-h-screen p-4">
-    <div class="text-center">
-        <h1 class="text-6xl font-bold text-red-600 mb-4">Happy Valentine's Day!</h1>
-        <p class="text-xl text-pink-700 mb-8">You're like sunshine on a rainy day. You make my soul feel complete, like no one else ever could.</p>
-        <div id="heart" class="heart text-red-600 text-9xl mb-8">❤️</div>
-        <button class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition duration-300" id="acceptedButton">
-            Acepted
-        </button>
-        <button id="rejectedButton" class="bg-red-500 text-white px-6 py-3 rounded-full hover:bg-red-600 transition duration-300 Recjected">
-            Rejected
-        </button>
-    </div>
-
-    <!-- Video Section -->
-    <!--<div class="mt-12 w-full max-w-2xl">-->
-    <!--    <video class="w-full rounded-lg shadow-lg" controls>-->
-    <!--        <source src="valentine-video.mp4" type="video/mp4">-->
-    <!--        Your browser does not support the video tag.-->
-    <!--    </video>-->
-    </div>
-
-    <script>
-        document.getElementById('rejectedButton').addEventListener('click', function() {
-          
-            window.open("./Rejected_page.html", "_self");
-        });
-        document.getElementById('acceptedButton').addEventListener('click', function() {
-         
-            window.open("./index2.html", "_self");
-        });
+    <title>Contact Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
     </script>
+
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("8kQBmg1FRmEJWRX2p");
+        })();
+    </script>
+
+
+<style>
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
+    .space-y-1{
+        display: none;
+    }
+</style>
+</head>
+
+
+<body class="bg-pink-100 flex items-center justify-center min-h-screen">
+    <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
+        <p class="text-2xl font-bold mb-2 text-pink-800">Let's know each other</p>
+        <form action="#" method="POST" class="space-y-6">
+            <div>
+                <label for="name" class="block text-sm font-medium text-pink-700">Name</label>
+                <input type="text" id="name" name="name" required class="mt-1 block w-full px-3 py-2 border border-pink-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="user_id" class="block text-sm font-medium text-pink-700">User ID</label>
+                <input type="text" id="user_id" name="user_id" required class="mt-1 block w-full px-3 py-2 border border-pink-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+            <div>
+                <label for="phone_id" class="block text-sm font-medium text-pink-700">Phone ID</label>
+                <input type="text" id="phone_id" name="phone_id" required class="mt-1 block w-full px-3 py-2 border border-pink-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm">
+            </div>
+            <div>
+                
+                <label for="message" class="block text-sm font-medium text-pink-700">Message</label>
+                <textarea id="message" name="message" rows="4" required class="mt-1 block w-full px-3 py-2 border border-pink-300 rounded-md shadow-sm focus:outline-none focus:ring-pink-500 focus:border-pink-500 sm:text-sm"></textarea>
+            </div>
+            <div>
+                <button type="submit" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-pink-600 hover:bg-pink-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-pink-500" onclick="sendMail()">
+                    Submit
+                </button>
+            </div>
+        </form>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>

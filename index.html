@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day Proposal</title>
+    <style>
+        body {
+            font-family: 'Arial', cursive;
+            background: #ffebee;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex: space-between;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .container {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            color: #e91e63;
+            font-size: 3em;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .buttons {
+            margin-top: 2em;
+        }
+
+        button {
+            font-size: 1.5em;
+            padding: 15px 30px;
+            margin: 0 15px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        #acceptBtn {
+            background: #4CAF50;
+            color: white;
+        }
+
+        #rejectBtn {
+            background: #f44336;
+            color: white;
+            position: relative;
+        }
+
+        .heart {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #e91e63;
+            transform: rotate(-45deg);
+            animation: floatUp 5s linear infinite;
+        }
+       
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: #e91e63;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            top: -10px;
+            left: 0;
+        }
+
+        .heart::after {
+            left: 10px;
+            top: 0;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes floatUp {
+            0% { 
+                transform: rotate(-45deg) translateY(0) scale(1);
+                opacity: 1;
+            }
+            100% { 
+                transform: rotate(-45deg) translateY(-100vh) scale(0);
+                opacity: 0;
+            }
+        }
+
+        .message {
+            display: none;
+            font-size: 2em;
+            color: #e91e63;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+   
+            <h1>Will You Be My Valentine? 💖</h1>
+        
+   
+        <div class="buttons">
+            <button id="acceptBtn" onclick="showResponse(true)" ondblclick="">Yes! Absolutely! 😍</button>
+            <button id="rejectBtn" onmouseover="dodgeButton()" onclick="showResponse(false)">Maybe Later... 😅</button>
+        </div>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        // Create floating hearts
+        function createHearts() {
+            for(let i = 0; i < 50; i++) {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 5 + 's';
+                document.body.appendChild(heart);
+            }
+        }
+
+        // Show response message
+ 
+
+        // Make reject button dodge mouse
+  
+    document.getElementById('acceptBtn').addEventListener('click', function() {
+        // Show loading message
+        
+
+        // Set a delay (e.g., 3 seconds) before navigating to the next page
+        setTimeout(function() {
+            // Redirect to the next page
+            window.open("/user-data/index.html"); // Change this to your next page URL
+        }, 100); // 1000 milliseconds = 3 seconds
+    });
+    document.getElementById('rejectBtn').addEventListener('click', function() {
+        // Show loading message
+        
+
+        // Set a delay (e.g., 3 seconds) before navigating to the next page
+        setTimeout(function() {
+            // Redirect to the next page
+            window.open("./rejected/Rejected_page.html"); // Change this to your next page URL
+        }, 100); // 1000 milliseconds = 3 seconds
+    });
+
+
+        // Initial hearts animation
+        createHearts();
+    </script>
+</body>
+</html>

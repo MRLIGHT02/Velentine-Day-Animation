@@ -12,7 +12,7 @@ var isNotClicked=true;
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
   var loveScore = getRandomNumber(80,100)
-  var loveFinal = Math.round(loveScore);
+  var loveFinal = loveScore;
   if (yourName === "") {
     alert("please enter your name");
   } else if (loversName === "") {

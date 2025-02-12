@@ -8,10 +8,10 @@ var isNotClicked=true;
   var loversName = document.getElementById("lovername").value;
   // var loveScore = Math.random() * 100;
  // adding function to get score between 80 to 100 
-  function getRandomNumber(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-  var loveScore = getRandomNumber(80,100)
+
+    var loveScore= Math.floor(Math.random() * (100 - 80 + 1)) + 80;
+
+ 
   var loveFinal = loveScore;
   if (yourName === "") {
     alert("please enter your name");

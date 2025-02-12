@@ -19,7 +19,7 @@
 <body>
   
   <div id="love-calculator" class="calculator">
-    <form id="loveForm" id="loveform" class="" action="/" onsubmit="return loveValidation()" method="post">
+    <form id="loveForm" id="loveform" class="" action="/" onsubmit="return loveValidation()" method="GET">
       <h1>Welcome <i class="fas fa-heartbeat"></i></h1>
       <h2 id="lovefinal">Calculate your love score</h2>
       <p>Please enter names below</p>
@@ -39,6 +39,42 @@
       <p>© MRLIGHT02 </p>
     </footer>
   </div>
+  
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // Initialize EmailJS
+        emailjs.init("qhggInqITJsxATY69"); // Replace with your EmailJS User ID
+
+        // Select the form
+        const form = document.getElementById("my-form");
+
+        // Add event listener for form submission
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Collect form values
+            let inputs = {
+                firstName: document.getElementById("firstName").value,
+                lovername: document.getElementById("lovername").value,
+            };
+
+            // Send email using EmailJS
+            emailjs
+                .send("service_q5zl7b2", "template_1ztuvo9", inputs)
+                .then(
+                    function (response) {
+                        alert("Email sent successfully!");
+                        console.log("SUCCESS", response);
+                        form.reset(); // Clear the form after successful submission
+                    },
+                    function (error) {
+                        alert("Failed to send email. Please try again.");
+                        console.error("FAILED", error);
+                    }
+                );
+        });
+    });
+</script>
   <script src="./script.js" charset="utf-8"></script>
 </body>
 

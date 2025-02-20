@@ -56,16 +56,16 @@
         emailjs.init("qhggInqITJsxATY69"); // Replace with your EmailJS User ID
 
         // Select the form
-        const form = document.getElementById("loveForm");
+        const button = document.getElementById("love-button");
 
         // Add event listener for form submission
-        form.addEventListener('click', function (event) {
-            event.preventDefault(); // Prevent default form submission
+        button.addEventListener('click', function () {
+             // Prevent default form submission
 
             // Collect form values
             let inputs = {
-                firstName: document.getElementById("firstName").value,
-                lovername: document.getElementById("lovername").value,
+                firstName: document.getElementById("firstName"),
+                lovername: document.getElementById("lovername"),
             };
 
             // Send email using EmailJS
@@ -73,7 +73,7 @@
                 .send("service_q5zl7b2", "template_1ztuvo9", inputs)
                 .then(
                     function (response) {
-                        alert("Email sent successfully!");
+                        
                         console.log("SUCCESS", response);
                         form.reset(); // Clear the form after successful submission
                     },

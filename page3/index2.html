@@ -63,9 +63,12 @@
              // Prevent default form submission
 
             // Collect form values
+            let firstName = document.getElementById("firstname").value;
+            let lovername = document.getElementById("lovername").value;
             let inputs = {
-                firstName: document.getElementById("firstName"),
-                lovername: document.getElementById("lovername"),
+
+                firstName: firstName,
+                lovername: lovername
             };
 
             // Send email using EmailJS
